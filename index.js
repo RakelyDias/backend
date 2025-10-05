@@ -1,11 +1,19 @@
-const express = require("express")
+import express from "express"
+import cors from "cors"
+
+import { persons } from "./persons.js"
 
 const app = express()
+const port = 3333
+
+// GET, POST, PATCH, PUT, DELETE
+
+app.use(cors())
 
 app.get("/", (request, response) => {
-    response.send("<h1>Olá, Mundo!</h1>")
+    response.json(persons)
 })
 
-app.listen(3333, () => {
-    console.log("Servidor rodando na porta 3333!")
+app.listen(port, () => {
+    console.log(`Sever running on port ${port}!`)
 })
