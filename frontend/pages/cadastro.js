@@ -25,4 +25,6 @@ const response = await fetch("http://localhost:3333/cadastrar", {
     }).then (response => response.json())
 
     alert(response.message)
+
+    window.location.href = "../index.html"
 }
